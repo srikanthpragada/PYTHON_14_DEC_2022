@@ -1,8 +1,9 @@
-st = "90,34,45,56,78"
+st = "90,34,45,a,56,78"
 
 parts = st.split(",")
-nums = map(int, parts)
+valid_parts = filter(str.isdigit, parts)
+nums = map(int, valid_parts)
 print(sum(nums))
 
-nums = [int(p) for p in st.split(",")]
+nums = [int(p) for p in st.split(",") if p.isdigit()]
 print(sum(nums))
