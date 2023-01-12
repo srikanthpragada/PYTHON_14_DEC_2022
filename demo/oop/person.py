@@ -3,6 +3,15 @@ class Person:
         self.name = name
         self.age = age
 
+    @property
+    def category(self):
+        if self.age < 30:
+            return "Young"
+        elif self.age < 60:
+            return "Middle Age"
+        else:
+            return "Old"
+
     # called when object is converted to str
     def __str__(self):
         return self.name + " - " + str(self.age)
@@ -18,6 +27,8 @@ class Person:
 
 
 p1 = Person("A", 30)
+print(p1.category)  # Property
+
 p2 = Person("B", 25)
 p3 = Person("B", 25)
 
